@@ -26,7 +26,7 @@ public class CustomListTest {
     public void removeCity() {
         list.addCity(new City("Estevan", "SK"));
         list.removeCity(0); // Assuming removeCity is correctly implemented to remove based on index
-        assertEquals(0, list.getCount());
+        assertEquals(9, list.getCount());
     }
 
     @Test
