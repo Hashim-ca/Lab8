@@ -1,45 +1,39 @@
 package com.example.lab8;
 
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-
-//import org.junit.Before;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 
 public class CustomListTest {
 
-
     private CustomList list;
-    /**
-     * create a mocklist for my citylist
-     * @return
-     */
-    public CustomList MockCityList(){
-        list = new CustomList(null,new ArrayList<>());
-        return list;
+
+    @BeforeEach
+    public void setUp() {
+        // Initialize your list here
+        list = new CustomList(null, new ArrayList<>());
     }
 
-    /**
-     * this adds a city object to the list
-     *the second phase, you can add the
-     city * @param city
-     */
-    /**
-     * get the size of the list
-     * increase the list by adding a new city
-     * check if our current size matches the initial size
-     plus one
-     */
     @Test
-    public void addCityTest(){
-        list = MockCityList();
+    public void addCityTest() {
         int listSize = list.getCount();
         list.addCity(new City("Estevan", "SK"));
-        assertEquals(list.getCount(),listSize + 1);
+        assertEquals(listSize + 1, list.getCount());
     }
 
+    @Test
+    public void removeCity() {
+        list.addCity(new City("Estevan", "SK"));
+        list.removeCity(0); // Assuming removeCity is correctly implemented to remove based on index
+        assertEquals(0, list.getCount());
+    }
+
+    @Test
+    public void countCities() {
+        list.addCity(new City("Estevan", "SK"));
+        list.addCity(new City("Regina", "SK"));
+        list.addCity(new City("Saskatoon", "SK"));
+        assertEquals(3, list.getCount());
+    }
 }

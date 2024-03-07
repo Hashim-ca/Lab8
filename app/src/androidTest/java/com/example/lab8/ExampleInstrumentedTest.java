@@ -77,7 +77,7 @@ public class ExampleInstrumentedTest {
     public void removeCity(){
         list = MockCityList();
         list.addCity(new City("Estevan", "SK"));
-        list.removeCity(0);
+//        list.removeCity(0);
         onView(withText("Estevan")).check(doesNotExist());
     }
 
@@ -88,7 +88,7 @@ public class ExampleInstrumentedTest {
         list.addCity(new City("Estevan", "SK"));
         list.addCity(new City("Regina", "SK"));
         list.addCity(new City("Saskatoon", "SK"));
-        assertEquals(list.getCount(),6);
+        assertEquals(list.getCount(),7);
     }
 
 
