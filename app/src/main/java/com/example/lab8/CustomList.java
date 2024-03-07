@@ -54,4 +54,11 @@ public class CustomList extends ArrayAdapter<City> {
 
     }
 
+    //use click listener to remove city from list
+    public void removeCity(int position){
+        cities.remove(position);
+    }
+
+
+
 }
